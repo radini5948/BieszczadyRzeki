@@ -5,7 +5,7 @@ Główny plik aplikacji Streamlit
 # @title Strona Główna
 
 import streamlit as st
-from ui.pages import home, hydro_stations, hydro_warnings
+from flood_monitoring.ui.pages import home, hydro_stations, hydro_warnings
 from datetime import datetime
 
 st.set_page_config(
