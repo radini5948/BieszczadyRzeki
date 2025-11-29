@@ -32,4 +32,4 @@ COPY flood_monitoring/ui ./flood_monitoring/ui
 
 ENV PYTHONPATH="/app"
 
-CMD ["streamlit", "run", "flood_monitoring/ui/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "flood_monitoring/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
