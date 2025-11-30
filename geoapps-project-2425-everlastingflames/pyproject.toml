@@ -1,15 +1,10 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "flood_monitoring"
 version = "0.1.0"
-authors = [
-    { name = "Your Name", email = "your.email@example.com" },
-]
-description = "System monitorowania zagrożeń powodziowych"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.13"     # ← THIS IS THE KEY LINE
+# or even more explicit:
+# requires-python = ">=3.11,<4.0"
+
 dependencies = [
     "fastapi==0.104.1",
     "uvicorn==0.24.0",
@@ -36,18 +31,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest==7.4.3",
-    "black==23.11.0",
+    "black==23.11.0",          # still works perfectly on 3.11 and 3.12
     "isort==5.12.0",
     "flake8==6.1.0",
 ]
-
-[tool.black]
-line-length = 88
-target-version = ['py311']
-
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-
-[tool.hatch.build.targets.wheel]
-packages = ["flood_monitoring"]
